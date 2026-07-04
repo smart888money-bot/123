@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>銀髮族居家收納困擾調查問卷</title>
+    <style>
+        :root {
+            --primary-color: #4a7c59;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #dddddd;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .question-group {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+        }
+
+        .question-group:last-child {
+            border-bottom: none;
+        }
+
+        .question-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .question-title .type-tag {
+            font-size: 14px;
+            font-weight: normal;
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* 加大點選區域，方便長輩按壓 */
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background-color: #fdfdfd;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 17px; /* 放大字體 */
+        }
+
+        .option-label:hover {
+            background-color: #f1f8f5;
+            border-color: var(--primary-color);
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            margin-top: 8px;
+            box-sizing: border-box;
+        }
+
+        .text-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover {
+            background-color: #3b6346;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>銀髮族居家收納困擾 調查問卷</h1>
+    <p class="description">親愛的長輩/您好：本問卷旨在了解您在日常居家收納與整理時遇到的狀況，感謝您的寶貴意見。</p>
+
+    <form id="surveyForm" action="#" method="POST">
+        
+        <!-- Q1 -->
+        <div class="question-group">
+            <div class="question-title">1. 在日常生活中，您覺得整理或拿取哪種類型的儲藏空間最吃力？<span class="type-tag">單選</span></div>
+            
+            <label class="option-label">
+                <input type="radio" name="q1" value="A" required>
+                <span>(A) 靠近地面的低矮抽屜或櫃子（需要頻繁蹲下或彎腰）</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q1" value="B">
+                <span>(B) 需要墊腳、拿椅子或舉手才夠得高的上方櫥櫃</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q1" value="C">
+                <span>(C) 深不見底、寬度過寬的大型衣櫃或儲藏室</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q1" value="D">
+                <span>(D) 覺得都還好，沒有特別吃力的感覺</span>
+            </label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-group">
+            <div class="question-title">2. 請問您目前家中是否有以下「堆積物品」的狀況？<span class="type-tag">可複選</span></div>
+            
+            <label class="option-label">
+                <input type="checkbox" name="q2" value="A">
+                <span>藥瓶、保健食品散落在餐桌或茶幾上</span>
+            </label>
+            <label class="option-label">
+                <input type="checkbox" name="q2" value="B">
+                <span>囤積了過多的塑料袋、紙箱、空罐子</span>
+            </label>
+            <label class="option-label">
+                <input type="checkbox" name="q2" value="C">
+                <span>捨不丟掉的舊衣物、過去的紀念品或家人的舊物品</span>
+            </label>
+            <label class="option-label">
+                <input type="checkbox" name="q2" value="D">
+                <span>很多過期或重複購買的日常用品、食品</span>
+            </label>
+            <label class="option-label">
+                <input type="checkbox" name="q2" value="E">
+                <span>沒有上述狀況</span>
+            </label>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-group">
+            <div class="question-title">3. 在整理房間時，您最常遇到的生理不適或安全顧慮是什麼？<span class="type-tag">可複選</span></div>
+            
+            <label class="option-label">
+                <input type="checkbox" name="q3" value="A">
+                <span>體力不足，動一下就覺得累、喘</span>
+            </label>
+            <label class="option-label">
+                <input type="checkbox" name="q3" value="B">
+                <span>視力變差，櫃子光線不足時看不清裡面的東西</span>
+            </label>
+            <label class="option-label">
+                <input type="checkbox" name="q3" value="C">
+                <span>東西太重搬不動（如厚棉被、大換季衣物）</span>
+            </label>
+            <label class="option-label">
+                <input type="checkbox" name="q3" value="D">
+                <span>擔心在搬動過程中站不穩或滑倒</span>
+            </label>
+            <div style="padding: 10px 15px;">
+                <label for="q3_other" style="font-size: 17px;">其他原因：</label>
+                <input type="text" id="q3_other" name="q3_other" class="text-input" placeholder="請填寫您的具體狀況">
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-group">
+            <div class="question-title">4. 對您來說，無法將物品順利「斷捨離（丟棄或送人）」的主要原因是什麼？<span class="type-tag">單選</span></div>
+            
+            <label class="option-label">
+                <input type="radio" name="q4" value="A" required>
+                <span>(A) 覺得物品還很好、丟掉太浪費（節儉美德）</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q4" value="B">
+                <span>(B) 東西承載太多過去的回憶，捨不得</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q4" value="C">
+                <span>(C) 想要留給子女或孫子，以後可能用得到</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q4" value="D">
+                <span>(D) 不知道該怎麼分類、或沒有體力把垃圾搬出去丟</span>
+            </label>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-group">
+            <div class="question-title">5. 為了改善目前的居住環境，您最希望獲得什麼樣的收納協助？<span class="type-tag">單選</span></div>
+            
+            <label class="option-label">
+                <input type="radio" name="q5" value="A" required>
+                <span>(A) 有人能陪我聊天，一起分類、挑選出不要的物品</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q5" value="B">
+                <span>(B) 改裝家中的櫃子（例如改成好拉的抽屜、加裝燈條、降低高度）</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q5" value="C">
+                <span>(C) 協助將粗重、大型的物品搬運或處理掉</span>
+            </label>
+            <label class="option-label">
+                <input type="radio" name="q5" value="D">
+                <span>(D) 提供簡單好記的收納標籤或顏色分類方法</span>
+            </label>
+        </div>
+
+        <button type="submit" class="btn-submit">提交問卷</button>
+    </form>
+</div>
+
+<script>
+    // 簡單的表單提交提示
+    document.getElementById('surveyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('感謝您的填寫！問卷已成功提交。');
+    });
+</script>
+
+</body>
+</html>
